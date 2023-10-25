@@ -24,7 +24,7 @@ public class Opponent : MonoBehaviour
         }
         if(hp == 0)
         {
-            scoreManager.score++;
+            scoreManager.score += 2;
             Destroy(gameObject);
         }
     }

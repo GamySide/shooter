@@ -23,6 +23,10 @@ public class BulletHero: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Untagged")
+        {
+            Destroy(gameObject);
+        }
         /*Opponent oponentCollider = collision.gameObject.GetComponent<Opponent>();
         if (oponentCollider)
         {
@@ -30,7 +34,6 @@ public class BulletHero: MonoBehaviour
             Destroy(oponentCollider.gameObject);
             
         }*/
-        Destroy(gameObject);
 
     }
     void Update()

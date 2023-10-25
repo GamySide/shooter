@@ -12,11 +12,13 @@ public class MouvementEtTir : MonoBehaviour
     public int i = 0;
 
     public float speed = 1f;
+    int hp = 5;
+    private ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -51,6 +53,23 @@ public class MouvementEtTir : MonoBehaviour
         if (transform.position.x > limitR.position.x)
         {
             transform.position = new Vector3(limitR.position.x, transform.position.y, transform.position.z);
+        }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("coucou");
+        BulletEnnemi bulletCollider = collision.gameObject.GetComponent<BulletEnnemi>();
+        if (bulletCollider)
+        {
+ 
+            hp -= 1;
+            scoreManager.score = scoreManager.score - 10;
+        }
+        if (hp == 0)
+        {
+            scoreManager.score = 0;
+            Destroy(gameObject);
         }
     }
 }

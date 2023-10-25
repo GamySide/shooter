@@ -24,7 +24,7 @@ public class OpponentTank: MonoBehaviour
         }
         if(hp == 0)
         {
-            scoreManager.score++;
+            scoreManager.score += 10;
             Destroy(gameObject);
         }
     }

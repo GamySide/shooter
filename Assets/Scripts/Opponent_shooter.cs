@@ -28,7 +28,7 @@ public class OpponentShooter: MonoBehaviour
         }
         if(hp == 0)
         {
-            scoreManager.score++;
+            scoreManager.score += 5;
             Destroy(gameObject);
         }
       
@@ -36,7 +36,7 @@ public class OpponentShooter: MonoBehaviour
 
     private void Update()
     {
-        int randomNumberForShoot = Random.Range(0, 300);
+        int randomNumberForShoot = Random.Range(0, 200);
         if (randomNumberForShoot == 150)
         {
             GameObject createdEnnemiBullet = Instantiate(bulletEnnemi, parent.position, parent.rotation);
