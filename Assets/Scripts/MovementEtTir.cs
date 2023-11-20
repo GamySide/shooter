@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MouvementEtTir : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MouvementEtTir : MonoBehaviour
     public Transform limitR;
     public int destroyedBullet;
     public int i = 0;
+    public TextMeshProUGUI healthText;
 
     public float speed = 1f;
     int hp = 5;
@@ -54,7 +56,7 @@ public class MouvementEtTir : MonoBehaviour
         {
             transform.position = new Vector3(limitR.position.x, transform.position.y, transform.position.z);
         }
-        
+        healthText.text ="health :" + hp.ToString("000");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,6 +72,7 @@ public class MouvementEtTir : MonoBehaviour
         {
             scoreManager.score = 0;
             Destroy(gameObject);
+            
         }
     }
 }
