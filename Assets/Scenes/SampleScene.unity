@@ -6486,7 +6486,7 @@ MonoBehaviour:
   destroyedBullet: 0
   i: 1
   healthText: {fileID: 1621201703}
-  speed: 0.1
+  speed: 0.02
 --- !u!60 &983346838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
