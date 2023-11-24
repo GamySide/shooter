@@ -13,7 +13,7 @@ public class MouvementEtTir : MonoBehaviour
     public int i = 0;
     public TextMeshProUGUI healthText;
 
-    public float speed = 1f;
+    public float speed = 0.1f;
     int hp = 5;
     private ScoreManager scoreManager;
 
@@ -38,7 +38,7 @@ public class MouvementEtTir : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             i+=1;
-            if (i == 10)
+            if (i == 60)
             {
                GameObject createdBullet = Instantiate(bullet, parent.position, parent.rotation);
                createdBullet.GetComponent<BulletHero>().myPlayer = this;

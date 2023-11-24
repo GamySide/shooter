@@ -36,7 +36,7 @@ public class OpponentShooter: MonoBehaviour
 
     private void Update()
     {
-        int randomNumberForShoot = Random.Range(0, 200);
+        int randomNumberForShoot = Random.Range(0, 1000);
         if (randomNumberForShoot == 150)
         {
             GameObject createdEnnemiBullet = Instantiate(bulletEnnemi, parent.position, parent.rotation);
